@@ -5,12 +5,15 @@
 ## install dependency from github
 
 > git submodule init
+
 > git submodule update
 
 ## create build directory, create makefile with cmake
 
 > mkdir build
+
 > cd build
+
 > cmake ..
 
 ## make file.
