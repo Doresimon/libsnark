@@ -16,6 +16,7 @@
 #define RUN_R1CS_PPZKSNARK_TCC_
 
 #include <sstream>
+#include <iostream>
 #include <type_traits>
 
 #include <libff/common/profiling.hpp>

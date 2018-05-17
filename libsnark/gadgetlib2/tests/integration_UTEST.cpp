@@ -25,9 +25,14 @@ namespace {
 TEST(gadgetLib2,Integration) {
     using namespace libsnark;
 
+    // initialize public parameters
     initPublicParamsFromDefaultPp();
+
+    // create r1cs
     const r1cs_example<libff::Fr<default_r1cs_ppzksnark_pp> > example = gen_r1cs_example_from_gadgetlib2_protoboard(100);
-    const bool test_serialization = false;
+
+    // const bool test_serialization = false;
+    const bool test_serialization = true;
 
     const bool bit = run_r1cs_ppzksnark<default_r1cs_ppzksnark_pp>(example, test_serialization);
     EXPECT_TRUE(bit);

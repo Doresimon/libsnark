@@ -49,8 +49,11 @@ r1cs_example<libff::Fr<libff::default_ec_pp> > gen_r1cs_example_from_gadgetlib2_
     assert(cs.is_valid());
     assert(cs.is_satisfied(primary_input, auxiliary_input));
 
+    printf("cs: %x\n",cs);
+    printf("primary_input: %x\n",primary_input);
+    printf("auxiliary_input: %x\n",auxiliary_input);
+
     return r1cs_example<FieldT>(cs, primary_input, auxiliary_input);
 }
 
 } // libsnark
-

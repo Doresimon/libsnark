@@ -364,7 +364,7 @@ public:
     friend std::istream& operator>> <ppT>(std::istream &in, r1cs_ppzksnark_proof<ppT> &proof);
 };
 
-
+// ###################   r1cs_ppzksnark  ###########################
 /***************************** Main algorithms *******************************/
 
 /**
