@@ -48,3 +48,24 @@ Using the library involves the following high-level steps:
 2. prover: run ppzksnark prover with **proving key**, **primary input**, **auxiliary input**: return **proof**.
 3. verifier: run ppzksnark virifier with **verification key**, **primary input**, **proof**: return **true or false**.
 
+# R1CS class
+
+## class `r1cs_constraint_system`
+* primary_input_size: `size_t`
+* auxilisry_input_size: `size_t`
+* constraints: `vector<r1cs_constraint>`
+
+## class `r1cs_constraint`
+* a: `linear_combination`
+* b: `linear_combination`
+* c: `linear_combination`
+
+## class `linear_combination`
+* terms: `vector<linear_term>`
+
+## class `linear_term`
+* index: `var_index_t`
+* coeff: `filedT`
+
+## class `variable`
+* index: `var_index_t`
