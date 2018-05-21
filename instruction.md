@@ -39,3 +39,12 @@ Using the library involves the following high-level steps:
 2. Use libsnark's __generator algorithm__ to create the __public parameters__ for this statement (once and for all).
 3. Use libsnark's __prover algorithm__ to __create proofs__ of true statements about the satisfiability of the R1CS.
 4. Use libsnark's __verifier algorithm__ to __check proofs__ for alleged statements.
+
+# R1CS ppzksnark example
+
+3 entities: generator, prover, verifier
+
+1. generator: run ppzksnark with **a given constraint system(CS)**, return a **proving key** and a **verification key**.
+2. prover: run ppzksnark prover with **proving key**, **primary input**, **auxiliary input**: return **proof**.
+3. verifier: run ppzksnark virifier with **verification key**, **primary input**, **proof**: return **true or false**.
+
