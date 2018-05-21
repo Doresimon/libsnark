@@ -69,3 +69,52 @@ Using the library involves the following high-level steps:
 
 ## class `variable`
 * index: `var_index_t`
+
+### `r1cs_ppzksnark_constraint_system` = `r1cs_constraint_system`
+### `r1cs_ppzksnark_primary_input` = `r1cs_primary_input` = `std:vector<FieldT>`
+### `r1cs_ppzksnark_auxiliary_input` = `r1cs_auxiliary_input` = `std:vector<FieldT>`
+
+
+### `knowledge_commitment_vector` = `sparse_vector<konwledge_commitment<T1,T2>>`
+
+## class `sparse_vector`
+* indices: `vector<size_t>`
+* values: `vector<T>`
+* domain_size: `size_t`
+
+## class `accumulation_vector`
+* first: `T`
+* rest: `sparse_vector<T>`
+
+## class `r1cs_ppzksnark_proving_key`
+* A_query: `knowledge_commitment_vector<G1<ppT>,G1<ppT>>`
+* B_query: `knowledge_commitment_vector<G2<ppT>,G1<ppT>>`
+* C_query: `knowledge_commitment_vector<G1<ppT>,G1<ppT>>`
+* H_query: `G1_vector<ppT>`
+* K_query: `G1_vector<ppT>`
+* constraint_system: `r1cs_ppzksnark_constraint_system<ppT>`
+
+## class `r1cs_ppzksnark_verification_key`
+* alphaA_g2: `G2<ppT>`
+* alphaB_g1: `G1<ppT>`
+* alphaC_g2: `G2<ppT>`
+* gamma_g2: `G2<ppT>`
+* gamma_beta_g1: `G1<ppT>`
+* gamma_beta_g2: `G2<ppT>`
+* rC_Z_g2: `G2<ppT>`
+* encoded_IC_query: `accumulation_vector<G1<ppT>>`
+
+## class `r1cs_ppzksnark_keypair`
+* pk: `r1cs_ppzksnark_proving_key`
+* vk: `r1cs_ppzksnark_verification_key`
+
+## class `r1cs_ppzksnark_proof`
+* g_A: `knowledge_commitment<G1<ppT>,G1<ppT>>`
+* g_B: `knowledge_commitment<G2<ppT>,G1<ppT>>`
+* g_C: `knowledge_commitment<G1<ppT>,G1<ppT>>`
+* g_H: `G1<ppT>`
+* g_K: `G1<ppT>`
+
+# R1CS example
+## func generate_r1cs_example_with_filed_input(const size_t `num_constraint`, const size_t `num_input`): `r1cs_example` {...}
+1. 
